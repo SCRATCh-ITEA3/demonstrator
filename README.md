@@ -1,6 +1,5 @@
 # demonstrator
 
-
 This repository:
 * https://github.com/SCRATCh-ITEA3/demonstrator
 
@@ -9,6 +8,9 @@ https://hub.docker.com/orgs/scratchitea3
 
 Read the docs documentation:
 * https://scratch-itea3-demonstrator.readthedocs.io/en/latest/
+
+Build pipeline:
+https://cloud.drone.io/SCRATCh-ITEA3/demonstrator
 
 ## Run the demonstrator:
 ```
