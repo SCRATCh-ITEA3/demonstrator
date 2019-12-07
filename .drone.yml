@@ -3,13 +3,6 @@ type: docker
 name: demonstrator
 
 steps:
-- name: code-analysis
-  image: aosapps/drone-sonar-plugin
-  settings:
-    sonar_host:
-      from_secret: sonar_host
-    sonar_token:
-      from_secret: sonar_token
 - name: slack
   image: plugins/slack
   settings:
