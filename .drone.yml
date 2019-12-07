@@ -1,3 +1,7 @@
+kind: pipeline
+type: docker
+name: demonstrator
+
 steps:
 - name: slack
   image: plugins/slack
