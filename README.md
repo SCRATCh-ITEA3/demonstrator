@@ -1,7 +1,12 @@
 # demonstrator
+[![Build Status](https://cloud.drone.io/api/badges/SCRATCh-ITEA3/demonstrator/status.svg)](https://cloud.drone.io/SCRATCh-ITEA3/demonstrator) [![Documentation Status](https://readthedocs.org/projects/scratch-itea3-demonstrator/badge/?version=latest)](https://scratch-itea3-demonstrator.readthedocs.io/en/latest/?badge=latest)
+
 
 This repository:
 * https://github.com/SCRATCh-ITEA3/demonstrator
+
+Build pipeline:
+* https://cloud.drone.io/SCRATCh-ITEA3/demonstrator
 
 The docker hub registry:
 * https://hub.docker.com/orgs/scratchitea3
@@ -9,8 +14,6 @@ The docker hub registry:
 Read the docs documentation:
 * https://scratch-itea3-demonstrator.readthedocs.io/en/latest/
 
-Build pipeline:
-* https://cloud.drone.io/SCRATCh-ITEA3/demonstrator
 
 Sonarcloud:
 * https://sonarcloud.io/dashboard?id=SCRATCh-ITEA3_demonstrator
