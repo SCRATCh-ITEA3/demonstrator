@@ -1,0 +1,28 @@
+The hello world program is intended to be used for public bulletin boards that use a standard board for running the display finctionality.
+standard boards as an example raspberry py, arduino
+The message that is entered in the program will apear on the display as an overlay on top of other running advertisements.
+For this application the applicable usecase is a Retail Use case, assumption is that a number of displays can recieve messages.
+the Messages are submitted by the "store manager" using a dedicated app on his phone or web interface on his computer.
+The message protocoll used is MQTT, the message has a maximum lenght of 255 characters.
+workflow:
+prerequesite: A gateway in the shop maintains a MQTT message que and a display address registry.
+prerequesite: The gateway has a message website to input a message.
+prerequesite: Each display with a message function has its own address. 
+prerequesite: a dedicated app is present on the manager phone.
+prerequesite: the App and the Website can query the gateway for the display adresses.
+prerequesite: The address of a display and its location are known to the store manager
+prerequesite: both the app as the website require a login by the store manager
+prerequesite: it is possible to apoint a priority to a message.
+prerequesite: each message can have a display time set to it, the default is 10 minutes
+Given the use of the website:
+The Manager logs in to the message website and select one, multiple or all displays for his message.
+The Manager type in his message and assignes priority 1 to the message
+After the manager clicks the ok button the message is checked for offensive wording.
+If no offensive wording is present the message will be added to the MQTT message que of the gateway.
+The Gateway checks the MQTT que regulary if there is a prio 1 message waiting, this message will be send imediately to the appropriate displays.
+Security considerations:
+login authentication
+gateway access control
+display firmware updates
+remote access or not?
+(conduct stride for this scenario)
