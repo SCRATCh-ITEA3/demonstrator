@@ -1,8 +1,21 @@
 #include <stdio.h>
+#include "hellofunctions.h"
+
+
+#ifndef TEST
+
 
 int main(void)
 {
-        printf("Hello SCRATCh world!\n");
-	printf("Hello Hamburg!\n");
-        return 0;
+
+    char str[128];
+    getHelloWorldMessage(1, str);
+    printf("%s", str);
+    getHelloWorldMessage(2, str);
+    printf("%s", str);
+    return 0;
 }
+#endif // !TEST
+
+
+
