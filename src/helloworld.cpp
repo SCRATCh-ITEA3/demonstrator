@@ -4,5 +4,6 @@ int main(void)
 {
         printf("Hello SCRATCh world!\n");
 	printf("Hello Hamburg!\n");
+	printf("Hello Merijn...\n");
         return 0;
 }
