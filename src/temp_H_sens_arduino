@@ -1,0 +1,122 @@
+// **** INCLUDES *****
+#include "LowPower.h"
+
+#include <RH_ASK.h>
+// #include <SPI.h> // Not actually used but needed to compile
+
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
+
+#define DHTPIN            5        // Pin which is connected to the DHT sensor.
+#define DHTTYPE           DHT22    // DHT 11
+
+#define THRESHOLD         75.0
+#define SWITCHDELAY       300000  //300 SEC
+
+DHT_Unified dht(DHTPIN, DHTTYPE);
+
+uint32_t delayMS;
+RH_ASK driver;
+const char *msgHigh = "HIGH";
+const char *msgLow = "LOW";
+
+int lastValue = 0;
+int newValue;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+
+  if (!driver.init()) {
+     // Serial.println("init failed");
+  }
+
+  // Initialize device.
+  dht.begin();
+
+  Serial.println("DHTxx Unified Sensor Example");
+  // Print temperature sensor details.
+  sensor_t sensor;
+
+  dht.temperature().getSensor(&sensor);
+  /*
+  Serial.println("------------------------------------");
+  Serial.println("Temperature");
+  Serial.print  ("Sensor:       "); Serial.println(sensor.name);
+  Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
+  Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor_id);
+  Serial.print  ("Max Value:    "); Serial.print(sensor.max_value); Serial.println(" *C");
+  Serial.print  ("Min Value:    "); Serial.print(sensor.min_value); Serial.println(" *C");
+  Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" *C");
+  Serial.println("------------------------------------");
+  // Print humidity sensor details.
+ */
+  dht.humidity().getSensor(&sensor);
+ /*
+ Serial.println("------------------------------------");
+  Serial.println("Humidity");
+  Serial.print  ("Sensor:       "); Serial.println(sensor.name);
+  Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
+  Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor_id);
+  Serial.print  ("Max Value:    "); Serial.print(sensor.max_value); Serial.println("%");
+  Serial.print  ("Min Value:    "); Serial.print(sensor.min_value); Serial.println("%");
+  Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println("%");
+  Serial.println("------------------------------------");
+  */
+  // Set delay between sensor readings based on sensor details.
+  delayMS = sensor.min_delay / 1000;
+}
+
+void loop() {
+  //LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
+ delay(32000);
+
+  // Get temperature event and print its value.
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  if (isnan(event.temperature)) {
+    Serial.println("Error reading temperature!");
+  }
+  else {
+    Serial.print("Temperature: ");
+    Serial.print(event.temperature);
+    Serial.println(" *C");
+  }
+  // Get humidity event and print its value.
+  dht.humidity().getEvent(&event);
+  if (isnan(event.relative_humidity)) {
+    Serial.println("Error reading humidity!");
+  }
+  else {
+    Serial.print("Humidity: ");
+    Serial.print(event.relative_humidity);
+    Serial.println("%");
+
+    // blink led
+    //digitalWrite(13, HIGH);
+    //delay(200);
+   // digitalWrite(13, LOW);
+
+//below the part that triggers a action, based on humidity above a set treshhold, example action could be display message of a rainy cloud if value is 1
+
+    if (event.relative_humidity < THRESHOLD) {
+       newValue = 0;
+    } else {
+       newValue = 1;
+    }
+
+    if (newValue != lastValue) {
+       lastValue = newValue;
+
+       if (newValue == 0)
+          digitalWrite(13, LOW);
+       else {
+          digitalWrite(13, HIGH);
+       //driver.waitPacketSent();
+       //delay of action change;
+        delay(SWITCHDELAY );
+        }
+    }
+  }
+}
