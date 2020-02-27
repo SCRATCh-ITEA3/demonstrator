@@ -1,5 +1,5 @@
 # demonstrator
-[![Build Status](https://cloud.drone.io/api/badges/SCRATCh-ITEA3/demonstrator/status.svg)](https://cloud.drone.io/SCRATCh-ITEA3/demonstrator) [![Documentation Status](https://readthedocs.org/projects/scratch-itea3-demonstrator/badge/?version=latest)](https://scratch-itea3-demonstrator.readthedocs.io/en/latest/?badge=latest)
+[![Build Status](https://cloud.drone.io/api/badges/SCRATCh-ITEA3/demonstrator/status.svg)](https://cloud.drone.io/SCRATCh-ITEA3/demonstrator) [![Documentation Status](https://readthedocs.org/projects/scratch-itea3-demonstrator/badge/?version=latest)](https://scratch-itea3-demonstrator.readthedocs.io/en/latest/?badge=latest) [![](https://images.microbadger.com/badges/image/scratchitea3/demonstrator.svg)](https://microbadger.com/images/scratchitea3/demonstrator "Get your own image badge on microbadger.com")
 
 
 This repository:
