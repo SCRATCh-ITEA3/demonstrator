@@ -16,7 +16,6 @@ docker pull scratchitea3/demonstrator
 docker run scratchitea3/demonstrator
 ```
 
-
 ## Build it locally
 As docker hub sometimes delays the build, its adviced to test the software locally.
 
