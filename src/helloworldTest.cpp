@@ -40,9 +40,9 @@ void test_functionHelloWorld3(void) {
 int main(void)
 {
     UNITY_BEGIN();
-    RUN_TEST(test_functionHelloWorld1);
-    RUN_TEST(test_functionHelloWorld2);
-    RUN_TEST(test_functionHelloWorld3);
+    RUN_TEST(test_functionHelloWorld1,15);
+    RUN_TEST(test_functionHelloWorld2,22);
+    RUN_TEST(test_functionHelloWorld3,29);
     UNITY_END();
 }
 
