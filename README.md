@@ -10,8 +10,17 @@ The docker hub registry: <https://hub.docker.com/orgs/scratchitea3>
 
 Read the docs documentation: <https://scratch-itea3-demonstrator.readthedocs.io/en/latest/>
 
-## Run the demonstrator
+## Run the demonstrator from the docker hub
 ```shell
 docker pull scratchitea3/demonstrator
 docker run scratchitea3/demonstrator
+```
+
+
+## Build it locally
+As docker hub sometimes delays the build, its adviced to test the software locally.
+
+```shell
+docker-compose up
+docker-compose run
 ```
