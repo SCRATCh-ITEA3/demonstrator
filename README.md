@@ -20,6 +20,6 @@ docker run scratchitea3/demonstrator
 As docker hub sometimes delays the build, its adviced to test the software locally.
 
 ```shell
+docker-compose build
 docker-compose up
-docker-compose run
 ```
