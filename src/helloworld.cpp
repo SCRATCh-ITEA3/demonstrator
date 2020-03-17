@@ -7,6 +7,6 @@ int main(void)
 	printf("Hello Rotterdam!\n");
 	printf("Hello Bremen!\n");	
 	printf("Hello Online!\n");
-	printf("Hello Till!\n");
+	printf("Hello Team!\n");
         return 0;
 }
