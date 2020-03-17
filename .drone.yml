@@ -3,6 +3,11 @@ type: docker
 name: demonstrator
 
 steps:
+- name: codacy
+  image: plugins/codacy
+  settings:
+    token:
+      from_secret: codacy_token
 - name: slack
   image: plugins/slack
   settings:
