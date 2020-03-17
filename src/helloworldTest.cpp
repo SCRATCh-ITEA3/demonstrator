@@ -35,7 +35,7 @@ void test_functionHelloWorld3(void) {
 
 
 
-#ifdef TEST
+
 
 int main(void)
 {
@@ -46,5 +46,5 @@ int main(void)
     UNITY_END();
 }
 
-#endif // TEST
+
 
