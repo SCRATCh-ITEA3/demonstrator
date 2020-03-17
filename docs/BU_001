@@ -1,0 +1,39 @@
+Business Requirements 
+This chapter lists business requirements.
+Country Configurability
+
+BR.SGD.Country.Configurability 
+1.0-BR101
+NA
+Support
+
+BR.SGD.Support 
+1.0-BR201
+NA (As a stakeholder, I want to have support for the product during local office hours.)
+BR.SGD.Update.Downtime 
+1.0-BR202
+NA (As a Product Manager, I want to be ensured that the maximum downtime is…)
+Service Lifecycle 
+
+BR.SGD.Service.Lifecycle 
+1.0-BR301
+As a Product Manager, I want support during the duration of SCRATCh
+BR.SGD.Maintenance.Updates 
+1.0-BR304
+As a Service Engineer, I want to have maintenance updates that can be deployed throughout its defined lifecycle. (OWASP IOT nr 8)
+Identifiers
+BR.SGD.Unique.Device.Identifier 
+1.0-BR401
+As Product Manager, I want my product to have a Unique Device identifier.
+
+Security & Privacy 
+
+BR.SGD.Security.Privacy 
+1.0-BR501
+As Product Manager, I want to be compliant with security and privacy standards.
+
+Quality 
+
+BR.SGD.Regulatory.Standards 
+1.0-BR601
+NA (As Quality Manager, I want the product to be compliant with existing regulatory standards and directives for the applicable country.)
