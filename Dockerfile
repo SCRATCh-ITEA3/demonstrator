@@ -1,8 +1,8 @@
-FROM alpine AS build_gcc
+FROM alpine:3.11 AS build_gcc
 WORKDIR /tmp/myapp
 COPY ./src/helloworld.cpp /tmp/myapp
 RUN apk add gcc build-base && gcc -o helloworld helloworld.cpp
-FROM alpine:latest
+FROM alpine:3.11
 WORKDIR /app
 COPY --from=build_gcc /tmp/myapp/ .
 ENTRYPOINT ["./helloworld"]

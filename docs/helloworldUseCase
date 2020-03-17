@@ -26,3 +26,20 @@ gateway access control
 display firmware updates
 remote access or not?
 (conduct stride for this scenario)
+
+Generic demonstrator
+Purpose, 
+Demonstrate firmware update for end node (display driver raspberry pi, NXP board)
+Demonstrate firmware update gateway (edge computing device e.g. NXP layerscale)
+Demonstrate software update gateway
+Demonstrate configuration update end Node.
+
+Assumption participants have a demonstrator enviroment that mimics the production enviroment. the demonstrator enviroment has a minimum of
+1 gateway, 1 end node and one display or led array attched to it.
+Development of firmware and software is done on github.
+Distribution packages format Docker and ..
+
+Question marks:
+notification of updates to participants
+final testing at participant before deploy?
+tools to be used?
