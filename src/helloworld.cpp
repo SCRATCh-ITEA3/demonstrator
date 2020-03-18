@@ -7,6 +7,7 @@ int main(void)
     printf("Hello Hamburg!\n");
     printf("Hello Rotterdam!\n");
     printf("Hello Bremen!\n");
+    printf("Hello Bucharest!\n");
     printf("Hello Online!\n");
     printf("Hello Team!\n");
     printf("1 + 1 = %d\n", v);
