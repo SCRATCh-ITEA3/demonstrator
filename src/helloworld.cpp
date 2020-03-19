@@ -2,7 +2,6 @@
 
 int main(void)
 {
-    int v = 1 + 1;
     printf("Hello SCRATCh home office world!\n");
     printf("Hello Bucharest!\n");
     printf("Hello Bremen!\n");
@@ -10,6 +9,6 @@ int main(void)
     printf("Hello Online!\n");
     printf("Hello Rotterdam!\n");
     printf("Hello Team!\n");
-    printf("1 + 1 = %d\n", v);
+    printf("Testing cronjob\n");
     return 0;
 }
