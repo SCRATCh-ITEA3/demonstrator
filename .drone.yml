@@ -2,6 +2,10 @@ kind: pipeline
 type: docker
 name: demonstrator
 
+platform:
+  os: linux
+  arch: arm
+  
 steps:
 - name: codacy
   image: plugins/codacy
