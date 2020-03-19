@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int v = 2;
+    int v = 1 + 1;
     printf("Hello SCRATCh home office world!\n");
     printf("Hello Bucharest!\n");
     printf("Hello Bremen!\n");
