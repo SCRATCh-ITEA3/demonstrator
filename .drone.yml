@@ -12,6 +12,8 @@ steps:
   image: plugins/docker
   settings:
     repo: scratchitea3/demonstrator
+    user:
+      from_secret: dockerhub_user
     auth:
       from_secret: dockerhub_token
     tags:
