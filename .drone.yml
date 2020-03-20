@@ -1,6 +1,9 @@
 kind: pipeline
 type: docker
-name: demonstrator
+name: arm-demonstrator
+
+platform:
+  arch: arm64
 
 steps:
 - name: codacy
@@ -8,6 +11,22 @@ steps:
   settings:
     token:
       from_secret: codacy_token
+      
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    repo: scratchitea3/demonstrator
+    tags:
+      - arm-latest
+---
+kind: pipeline
+type: docker
+name: x86-demonstrator
+
 - name: docker
   image: plugins/docker
   settings:
@@ -18,6 +37,7 @@ steps:
     repo: scratchitea3/demonstrator
     tags:
       - latest
+
 - name: slack
   image: plugins/slack
   settings:
