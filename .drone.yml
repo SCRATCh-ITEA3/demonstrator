@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: arm-demonstrator
+name: arm
 
 platform:
   arch: arm64
@@ -25,7 +25,11 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: x86-demonstrator
+name: x86
+
+platform:
+  arch: amd64
+
 
 - name: docker
   image: plugins/docker
