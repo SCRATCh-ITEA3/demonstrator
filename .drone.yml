@@ -14,8 +14,6 @@ steps:
     repo: scratchitea3/demonstrator
     user:
       from_secret: dockerhub_user
-    password:
-      from_secret: dockerhub_password
     auth:
       from_secret: dockerhub_token
     tags:
