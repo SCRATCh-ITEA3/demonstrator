@@ -14,8 +14,8 @@ steps:
     repo: scratchitea3/demonstrator
     user:
       from_secret: dockerhub_user
-    auth:
-      from_secret: dockerhub_token
+    password:
+      from_secret: dockerhub_password
     tags:
       - latest
 - name: slack
