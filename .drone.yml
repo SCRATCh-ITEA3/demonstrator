@@ -30,7 +30,7 @@ name: x86
 platform:
   arch: amd64
 
-
+steps:
 - name: docker
   image: plugins/docker
   settings:
