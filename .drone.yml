@@ -60,4 +60,4 @@ steps:
 
 depends_on:
 - arm
-- amd64
+- x86
