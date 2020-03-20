@@ -11,10 +11,10 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
-    username: 
+    username:
       from_secret: dockerhub_user
-    auth:
-      from_secret: dockerhub_token
+    password:
+      from_secret: dockerhub_password
     repo: scratchitea3/demonstrator
     tags:
       - latest
