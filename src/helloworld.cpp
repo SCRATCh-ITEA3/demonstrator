@@ -10,5 +10,6 @@ int main(void)
     printf("Hello Rotterdam!\n");
     printf("Hello Team!\n");
     printf("Hello Home Office\n");
+    printf("Testing cron\n");
     return 0;
 }
