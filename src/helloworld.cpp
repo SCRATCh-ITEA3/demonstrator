@@ -10,6 +10,6 @@ int main(void)
     printf("Hello Rotterdam!\n");
     printf("Hello Team!\n");
     printf("Hello Home Office\n");
-    printf("git status check\n");
+    printf("Little more git status check\n");
     return 0;
 }
