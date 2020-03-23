@@ -26,7 +26,6 @@ docker pull scratchitea3/demonstrator:arm-latest
 docker run scratchitea3/demonstrator:arm-latest
 ```
 
-
 ## Build it locally
 As docker hub sometimes delays the build, its adviced to test the software locally.
 
