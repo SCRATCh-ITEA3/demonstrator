@@ -10,6 +10,6 @@ int main(void)
     printf("Hello Rotterdam!\n");
     printf("Hello Team!\n");
     printf("Hello Home Office\n");
-    printf("Hello on i.MX 6\n");
+    printf("Hello for video\n");
     return 0;
 }
