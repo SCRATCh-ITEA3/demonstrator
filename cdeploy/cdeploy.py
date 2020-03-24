@@ -7,7 +7,7 @@ from git import Repo
 from time import sleep
 
 
-GIT_REPO_PATH = "/home/ubuntu/scratch/demonstrator/"
+GIT_REPO_PATH = "~/scratch/demonstrator/"
 
 
 def isGitPulled():
@@ -32,15 +32,15 @@ def isGitPulled():
     return 0
 
 def buildCode():
-    if not os.path.exists('/home/ubuntu/scratch/demonstrator/cdeploy/bin'):
-        os.makedirs('/home/ubuntu/scratch/demonstrator/cdeploy/bin/')
+    if not os.path.exists('~/scratch/demonstrator/cdeploy/bin'):
+        os.makedirs('~/scratch/demonstrator/cdeploy/bin/')
 
     #run the following command using subprocess
     p = subprocess.run([
                    "gcc",
-                   "/home/ubuntu/scratch/demonstrator/src/helloworld.cpp",
+                   "~/scratch/demonstrator/src/helloworld.cpp",
                    "-o",
-                   "/home/ubuntu/scratch/demonstrator/cdeploy/bin/hello"],
+                   "~/scratch/demonstrator/cdeploy/bin/hello"],
                    stdout=subprocess.PIPE)
 
     output=p.stdout.decode("utf-8")
@@ -52,10 +52,10 @@ def buildCode():
     return 0
 
 def executeCode():
-    if not os.path.exists('/home/ubuntu/scratch/demonstrator/cdeploy/bin'):
+    if not os.path.exists('~/scratch/demonstrator/cdeploy/bin'):
         buildCode()
     #execute the built code using subprocess
-    p = subprocess.run(["/home/ubuntu/scratch/demonstrator/cdeploy/bin/hello"], stdout=subprocess.PIPE)
+    p = subprocess.run(["~/scratch/demonstrator/cdeploy/bin/hello"], stdout=subprocess.PIPE)
     output = p.stdout
     print('{}'.format(output.decode("utf-8")).strip())
 
