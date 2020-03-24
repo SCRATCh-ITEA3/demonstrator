@@ -3,7 +3,7 @@
 int main(void)
 {
     printf("Hello SCRATCh world!\n");
-    printf("Hello Technical Round Team!\n");
+    printf("Hello ICC and CIP Team!\n");
     printf("Hello Bremen!\n");
     printf("Hello Hamburg!\n");
     printf("Hello Online!\n");
