@@ -7,4 +7,5 @@ FROM alpine:3.11
 WORKDIR /app
 RUN apk --no-cache update && apk --no-cache add libgcc
 COPY --from=build_gcc /tmp/myapp/ .
+ENTRYPOINT ["./helloworldTest"]
 ENTRYPOINT ["./helloworld"]
