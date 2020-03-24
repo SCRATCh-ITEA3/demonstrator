@@ -10,6 +10,6 @@ int main(void)
     printf("Hello Rotterdam!\n");
     printf("Hello Team!\n");
     printf("Hello Home Office\n");
-    printf("Loop test\n");
+    printf("Hot code check\n");
     return 0;
 }
