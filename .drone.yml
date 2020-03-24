@@ -1,6 +1,9 @@
 kind: pipeline
 type: docker
-name: demonstrator
+name: arm
+
+platform:
+  arch: arm
 
 steps:
 - name: codacy
@@ -8,6 +11,44 @@ steps:
   settings:
     token:
       from_secret: codacy_token
+
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    repo: scratchitea3/demonstrator
+    tags:
+      - arm-latest
+---
+kind: pipeline
+type: docker
+name: x86
+
+platform:
+  arch: amd64
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    repo: scratchitea3/demonstrator
+    tags:
+      - latest
+
+
+---
+kind: pipeline
+type: docker
+name: notification
+
+steps:
 - name: slack
   image: plugins/slack
   settings:
@@ -16,3 +57,7 @@ steps:
     channel: build-automation
     when:
       status: [ success, failure ]
+
+depends_on:
+- arm
+- x86
