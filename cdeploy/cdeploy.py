@@ -27,7 +27,7 @@ def isGitPulled():
             print('Pulling from git...')
             repo.remotes.origin.pull()
             return 1
-    else: 
+    else:
         print("Could not open git repository")
     return 0
 
@@ -37,15 +37,15 @@ def buildCode():
 
     #run the following command using subprocess
     p = subprocess.run([
-                   "gcc",   
-                   "/home/ubuntu/scratch/demonstrator/src/helloworld.cpp", 
+                   "gcc",
+                   "/home/ubuntu/scratch/demonstrator/src/helloworld.cpp",
                    "-o",
                    "/home/ubuntu/scratch/demonstrator/cdeploy/bin/hello"],
                    stdout=subprocess.PIPE)
 
     output=p.stdout.decode("utf-8")
     
-    if output is '':
+    if output == '':
         return 1
     else:
         print("Build output: {}".format(output))
@@ -85,5 +85,3 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             break
         
-    
-
