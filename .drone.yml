@@ -4,6 +4,7 @@ name: arm
 
 platform:
   arch: arm
+  os: linux
 
 steps:
 - name: codacy
@@ -21,7 +22,8 @@ steps:
       from_secret: dockerhub_password
     repo: scratchitea3/demonstrator
     tags:
-      - arm-latest
+      - linux-arm
+
 ---
 kind: pipeline
 type: docker
@@ -29,6 +31,7 @@ name: x86
 
 platform:
   arch: amd64
+  os: linux
 
 steps:
 - name: docker
@@ -40,8 +43,30 @@ steps:
       from_secret: dockerhub_password
     repo: scratchitea3/demonstrator
     tags:
-      - latest
+      - linux-amd64
 
+---
+kind: pipeline
+type: docker
+name: manifest
+
+steps:
+- name: manifest
+  image: plugins/manifest
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    target: scratchitea3/demonstrator
+    template: scratchitea3/demonstrator:OS-ARCH
+    platforms:
+      - linux/amd64
+      - linux/arm
+
+depends_on:
+- arm
+- x86
 
 ---
 kind: pipeline
@@ -59,5 +84,4 @@ steps:
       status: [ success, failure ]
 
 depends_on:
-- arm
-- x86
+- manifest
