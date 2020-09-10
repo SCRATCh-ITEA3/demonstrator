@@ -40,10 +40,15 @@ cppcheck-gui
 ```
 and open `demo.cppcheck` project configuration.
 
+### By the build pipeline
+
+Todo. Jenkins plugin available, but not Drone, I guess.
+
 ## TODO
 
 * Include Misra checks
 * Extend tests.
+* Include into build pipeline
 
 
 
