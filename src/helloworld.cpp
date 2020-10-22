@@ -6,5 +6,6 @@ int main(void)
     printf("For our demonstrator!\n");
     printf("Hello Everybody, Hamburg, Rotterdam!\n");
     printf("Welcome to the 2020-10-28 review!\n");
+    printf("Lets go!\n");    
     return 0;
 }
