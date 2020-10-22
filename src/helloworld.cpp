@@ -7,5 +7,6 @@ int main(void)
     printf("Hello Everybody, Hamburg, Rotterdam!\n");
     printf("Welcome to the 2020-10-28 review!\n");
     printf("Lets go!\n");    
+    printf("Live demo!\n");    
     return 0;
 }
