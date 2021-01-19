@@ -42,7 +42,7 @@ steps:
   - sleep 5
   - python3 -m unittest discover -s .
   - sleep 1 && pgrep -f mitmdump | xargs kill
-  - /app/otalyzerworker -k keywords.json -s severity.json -p /app/dump.mitm --severity-threshold 10 --filename report
+  - /app/otalyzerworker -k otalyzer/keywords.json -s otalyzer/severity.json -p /app/dump.mitm --severity-threshold 10 --filename report
   
 - name: docker
   image: plugins/docker
