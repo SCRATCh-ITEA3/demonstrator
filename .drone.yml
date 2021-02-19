@@ -12,7 +12,7 @@ steps:
   settings:
     token:
       from_secret: codacy_token
-
+  
 - name: docker
   image: plugins/docker
   settings:
@@ -34,6 +34,16 @@ platform:
   os: linux
 
 steps:
+- name: otalyzer
+  image: otarisgmbh/otalyzer
+  commands:
+  - python3 -m http.server 8081 --directory / &
+  - mitmdump --showhost --ssl-insecure -w /app/dump.mitm &
+  - sleep 5
+  - python3 -m unittest discover -s otalyzer/
+  - sleep 1 && pgrep -f mitmdump | xargs kill
+  - /app/otalyzerworker -k otalyzer/keywords.json -s otalyzer/severity.json -p /app/dump.mitm --severity-threshold 10 --filename report
+  
 - name: docker
   image: plugins/docker
   settings:

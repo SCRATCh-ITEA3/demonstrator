@@ -1,0 +1,10 @@
+{
+    "Username": {
+        "encrypted": 1,
+        "unencrypted": 4
+    },
+    "Password": {
+        "encrypted": 2,
+        "unencrypted": 9
+    },
+}
