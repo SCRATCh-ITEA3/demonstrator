@@ -1,5 +1,10 @@
 version: '2'
 
 services:
+  mosquitto:
+    image: "eclipse-mosquitto:latest"
+    ports:
+      - "1883:1883"
+    restart: unless-stopped
   build:
     build: .
