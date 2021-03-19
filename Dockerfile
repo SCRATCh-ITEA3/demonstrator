@@ -13,7 +13,7 @@ RUN apk update && apk --no-cache add git go && git clone https://github.com/NVIS
 FROM alpine:3.11
 # install IOXY demo dependencies and code
 WORKDIR /ioxy
-RUN apk --no-cache update && apk --no-cache add python3 nodejs npm musl-dev gcc build-base
+RUN apk --no-cache update && apk --no-cache add python3 nodejs npm
 RUN pip3 --disable-pip-version-check install paho-mqtt
 RUN npm --loglevel=error install aedes 
 COPY ./ioxy /ioxy
