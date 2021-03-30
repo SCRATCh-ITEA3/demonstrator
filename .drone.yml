@@ -110,8 +110,8 @@ steps:
   image: klee/klee:2.1
   commands:
   - rm -rf klee-helloworld
-  - clang++ -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone -c src/helloworld.cpp
-  - klee -libc=klee  --external-calls=all -output-dir=klee-helloworld  helloworld.bc
+  - clang++ -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone -o /tmp/helloworld.bc -c src/helloworld.cpp
+  - klee -libc=klee  --external-calls=all -output-dir=klee-helloworld  /tmp/helloworld.bc
   - ls klee-helloworld/*.err | awk -F. '{printf("\n# %s\n",$0);system("cat "$0)system("ktest-tool " $1 ".ktest")}'
   - klee-stats klee-helloworld
 
@@ -120,7 +120,7 @@ steps:
   image: klee/klee:2.1
   commands:
   - rm -rf klee-regexp
-  - clang -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone  -c src/regexp.c
-  - klee --only-output-states-covering-new -solver-backend=z3 -output-dir=klee-regexp regexp.bc
+  - clang -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone -o /tmp/regexp.bc -c src/regexp.c
+  - klee --only-output-states-covering-new -solver-backend=z3 -output-dir=klee-regexp /tmp/regexp.bc
   - ls klee-regexp/*.err | awk -F. '{printf("\n# %s\n",$0);system("cat "$0)system("ktest-tool " $1 ".ktest")}'
   - klee-stats klee-regexp
