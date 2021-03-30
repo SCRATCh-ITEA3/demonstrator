@@ -1,3 +1,6 @@
 
 .sonar/*
 .scannerwork/*
+klee-helloworld
+klee-regexp
+*.bc
