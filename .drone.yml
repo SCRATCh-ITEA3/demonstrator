@@ -95,7 +95,7 @@ steps:
   - sudo rm -rf klee-helloworld
   - clang++ -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone -c src/helloworld.cpp
   - klee -libc=klee  --external-calls=all -output-dir=klee-helloworld  helloworld.bc
-  - ls klee-helloworld/*.err | awk -F. '{printf("\n# %s\n",$0);system("cat "$0)system("ktest-tool " $1 ".ktest")}'
+  - ls klee-helloworld/*.err | awk -F. '/\.err$/{printf("\n# %s\n",$0);system("cat " $0)system("ktest-tool " $1 ".ktest")}'
   - klee-stats klee-helloworld
   - sudo chmod o=rx . 
 
@@ -107,12 +107,11 @@ steps:
   - sudo rm -rf klee-regexp
   - clang -I /home/klee/klee_src/include -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone  -c src/regexp.c
   - klee --only-output-states-covering-new -solver-backend=z3 -output-dir=klee-regexp regexp.bc
-  - ls klee-regexp/*.err | awk -F. '{printf("\n# %s\n",$0);system("cat "$0)system("ktest-tool " $1 ".ktest")}'
+  - ls klee-regexp/*.err | awk -F. '/\.err$/{printf("\n# %s\n",$0);system("cat " $0)system("ktest-tool " $1 ".ktest")}' || true
   - klee-stats klee-regexp
   - sudo chmod o=rx . 
 
 depends_on:
-- arm
 - x86
 
 ---
